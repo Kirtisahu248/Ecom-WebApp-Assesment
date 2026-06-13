@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useCart } from '../../store/CartContext'
 import CartDrawer from '../cartdrawer/CartDrawer'
 import cart from '../../assets/shopping-cart.png'
-import  '../Navbar/Navbar.scss'
+import  '../Navbar/navbar.scss'
 
 function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
