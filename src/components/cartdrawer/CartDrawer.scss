@@ -1,0 +1,164 @@
+@use '../../styles/variable' as *;
+
+.overlay {
+  position: fixed;   
+  inset: 0;        
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 100vh;
+  background: $white;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);       
+  transition: transform 0.3s ease; 
+
+  &--open {
+    transform: translateX(0);  
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-md $spacing-lg;
+    border-bottom: 1px solid $grey-mid;
+
+    h2 {
+      font-size: $font-lg;
+    }
+  }
+
+  &__close {
+    background: none;
+    font-size: $font-lg;
+    color: $grey-dark;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &__empty {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $grey-dark;
+  }
+
+  &__items {
+    flex: 1;
+    overflow-y: auto; 
+    padding: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__summary {
+    padding: $spacing-md $spacing-lg;
+    border-top: 1px solid $grey-mid;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-md;
+
+    &--total {
+      font-weight: 700;
+      font-size: $font-lg;
+    }
+  }
+
+
+  // Mobile responsive
+  @media (max-width: $mobile) {
+    width: 100vw;
+  }
+}
+
+.cart-item {
+  display: flex;
+  gap: $spacing-md;
+  align-items: flex-start;
+
+  &__image {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border: 1px solid $grey-light;
+    border-radius: 6px;
+  }
+
+  &__details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__title {
+    font-size: $font-sm;
+    font-weight: 600;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__variant {
+    font-size: $font-sm;
+    color: $grey-dark;
+  }
+
+  &__price {
+    font-size: $font-sm;
+    font-weight: 600;
+    color: $primary;
+  }
+
+  &__qty {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    button {
+      width: 26px;
+      height: 26px;
+      border: 1px solid $grey-mid;
+      border-radius: 4px;
+      background: $grey-light;
+      font-size: $font-md;
+      font-weight: 600;
+
+      &:hover {
+        background: $grey-mid;
+      }
+    }
+
+    span {
+      font-size: $font-sm;
+      font-weight: 600;
+      min-width: 20px;
+      text-align: center;
+    }
+  }
+
+  &__remove {
+    background: none;
+    font-size: $font-md;
+    padding: 4px;
+  }
+}
