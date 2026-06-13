@@ -24,7 +24,7 @@ A mini e-commerce web app built as part of the Nua Woman frontend developer asse
 Make sure you have **Node 18+** installed.
 
 # Clone the repository
-git clone [your repo link here]
+git clone [https://github.com/Kirtisahu248/Ecom-WebApp-Assesment.git]
 
 # Go into the project folder
 cd ecom-webapp
