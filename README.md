@@ -2,7 +2,7 @@
 
 A mini e-commerce web app built as part of the Nua Woman frontend developer assessment.
 
-**Live URL:** _Add your Vercel link here after deploying_
+**Live URL:** https://ecom-web-app-assesment.vercel.app/
 
 ---
 
